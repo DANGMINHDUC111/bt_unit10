@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/all.min.css">
+	<style>
+		.container
+		{
+			width: 60%;
+			margin: auto;
+		}
+		.do
+		{
+			background: red;
+			padding: 20px 30px;
+		}
+		.do h2
+		{
+			color: white;
+			text-align: center;
+		}
+		.do input
+		{
+			width: 60%;
+			height: 30px;
+		}
+		.do button
+		{
+			background: #d9d9d9;
+			padding: 11px 42px;
+			border: #d9d9d9;
+		}
+		.xam
+		{
+			background: #ada5a5!important;
+			color: white;
+			text-decoration: line-through;
+		}
+		.fa-check
+		{
+			margin-right: 5px;
+			color: #eee;
+		}
+		
+		.hover
+		{
+			background: green;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="do" >
+			<h2>My To Do List</h2>
+			<input type="text" placeholder="Tittle..." id="input">
+			<button id="add">Add</button>
+		</div>
+		<div class="content">
+			
+		</div>
+
+		
+	</div>
+
+	<script src="jquery.min.js"></script>
+	<script>
+		$(document).ready(function($) {
+		
+			
+
+			$('#add').click(function() {
+				var input=$('#input').val();
+				
+				$('.content').append('<div style="padding: 10px 10px;background:#eee;border-bottom:1px solid gray;" ><i class="fas fa-check" ></i>'+input+'<span style="float:right;" class="del">X</span></div>');
+				$('#input').val('');
+
+				
+
+				$('.content div').click(function(event) {
+					$(this).addClass('xam');
+					
+				});
+
+				$('.del').click(function(event) {
+							$(this).parent().remove();
+						});
+
+
+				if(input=='')
+					alert('Mời bạn nhập nội dung vào ô input');
+			});
+
+			
+			
+				
+				
+
+
+		});
+
+
+	</script>
+</body>
+</html>

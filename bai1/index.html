@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+
+<body>
+	<div class="contener">
+		<br>		
+		<h3>My To Do List</h3>
+		<div class="form">
+		<input type="text" class="input-type" id="newItem" value="" placeholder="Title....">
+		<button class="btn" id="additem">ADD</button>
+		</div>
+		<div style="clear: both;"></div>
+		<br>
+		<div id="newval"></div>
+	</div>
+
+	<script src="jquery.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			$('#additem').on('click', addItem);
+			$('#newval').on('change', '.completeItem', completeItem);
+			$('#newval').on('click','.deleteItem', deleteItem);
+			function addItem(){
+				var newtext = $('#newItem').val();
+				$('#newval').append(<div class="dep"><input class="completeItem" type="checkbox"> + newtext + <span class="deleteItem"><i class="fas fa-times"></i></span></div>);
+				$('#newItem').val("");
+			}
+			function completeItem(){
+				$(this).parent().toggleClass('line');
+			}
+			function deleteItem(){
+				$(this).parent().remove();
+			}
+		})
+	</script>
+</body>
+
+</html>

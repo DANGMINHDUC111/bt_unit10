@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/all.min.css">
+	<style>
+		.container
+		{
+			width: 500px;
+			margin: auto;
+			background: gray;
+			margin-top: 50px;
+		}
+		#nut1,#nut2,#nut3,#nut4
+		{
+			border-bottom: 1px solid green;
+			position: relative;
+			
+		}
+		
+		.fa-plus
+		{
+			display: inline-block;
+			background: red;
+			color: white;
+			padding: 10px;
+			font-size: 20px;
+			position: absolute;
+			top:5px;
+			left: -5px;
+			z-index: 8;
+		}
+		.fa-minus
+		{	
+			display: inline-block;
+			background: red;
+			color: white;
+			padding: 10px;
+			font-size: 20px;
+			position: absolute;
+			top:5px;
+			left: -5px;
+			z-index: 2;
+		}
+		h3
+		{
+			display: inline-block;
+			margin-left: 40px;
+		}
+		.xanh
+		{
+			color: green;
+		}
+		.tru
+		{
+			z-index: 10!important;
+			background: green;
+		}
+		#pannel1,#pannel2,#pannel3,#pannel4
+		{
+			background: #e0cccc;
+			padding: 10px;
+			display: none;
+		}
+		.active
+		{
+			display: block!important;
+		}
+	</style>
+</head>
+<body>
+<div class="container">
+	<div id="nut1">
+		<div class="icon "><i class="fas fa-minus " id="icon1"></i><i class="fas fa-plus" ></i> </div> 
+	
+		<h3>First Pannel</h3>
+	</div> <!-- end nut 1 -->
+	<div id="pannel1">
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem perferendis natus quibusdam minus velit ut, impedit facere quas delectus harum repudiandae eius aut maiores, voluptatum quod dignissimos a quis nihil.</p>
+	</div>
+
+	<div id="nut2">
+		<div class="icon "><i class="fas fa-minus" id="icon2"></i><i class="fas fa-plus"></i> </div> 
+		
+		<h3>Second Pannel</h3>
+	</div> <!-- end nut 1 -->
+	<div id="pannel2">
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem perferendis natus quibusdam minus velit ut, impedit facere quas delectus harum repudiandae eius aut maiores, voluptatum quod dignissimos a quis nihil.</p>
+	</div>
+
+	<div id="nut3">
+		<div class="icon "><i class="fas fa-minus" id="icon3"></i><i class="fas fa-plus"></i> </div> 
+		
+		<h3>Third Pannel</h3>
+	</div> <!-- end nut 1 -->
+	<div id="pannel3">
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem perferendis natus quibusdam minus velit ut, impedit facere quas delectus harum repudiandae eius aut maiores, voluptatum quod dignissimos a quis nihil.</p>
+	</div>
+
+	<div id="nut4">
+		<div class="icon "><i class="fas fa-minus" id="icon4"></i><i class="fas fa-plus"></i> </div> 
+		
+		<h3>Fourth Pannel</h3>
+	</div> <!-- end nut 1 -->
+	<div id="pannel4">
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem perferendis natus quibusdam minus velit ut, impedit facere quas delectus harum repudiandae eius aut maiores, voluptatum quod dignissimos a quis nihil.</p>
+	</div>
+</div>
+<script src="jquery.min.js"></script>
+
+<script>
+	jQuery(document).ready(function($) {
+		$('#nut1').click(function() {
+			$('#pannel1').toggleClass('active');
+			$('#nut1 h3').toggleClass('xanh');
+			$('#icon1').toggleClass('tru');
+
+			$('#pannel2').removeClass('active');
+			$('#nut2 h3').removeClass('xanh');
+			$('#icon2').removeClass('tru');
+			$('#pannel3').removeClass('active');
+			$('#nut3 h3').removeClass('xanh');
+			$('#icon3').removeClass('tru');
+			$('#pannel4').removeClass('active');
+			$('#nut4 h3').removeClass('xanh');
+			$('#icon4').removeClass('tru');
+		});
+		
+		$('#nut2').click(function() {
+			$('#pannel2').toggleClass('active');
+			$('#nut2 h3').toggleClass('xanh');
+			$('#icon2').toggleClass('tru');
+
+			$('#pannel1').removeClass('active');
+			$('#nut1 h3').removeClass('xanh');
+			$('#icon1').removeClass('tru');
+			$('#pannel3').removeClass('active');
+			$('#nut3 h3').removeClass('xanh');
+			$('#icon3').removeClass('tru');
+			$('#pannel4').removeClass('active');
+			$('#nut4 h3').removeClass('xanh');
+			$('#icon4').removeClass('tru');
+		});
+
+		$('#nut3').click(function() {
+			$('#pannel3').toggleClass('active');
+			$('#nut3 h3').toggleClass('xanh');
+			$('#icon3').toggleClass('tru');
+
+			$('#pannel2').removeClass('active');
+			$('#nut2 h3').removeClass('xanh');
+			$('#icon2').removeClass('tru');
+			$('#pannel1').removeClass('active');
+			$('#nut3 h1').removeClass('xanh');
+			$('#icon1').removeClass('tru');
+			$('#pannel4').removeClass('active');
+			$('#nut4 h3').removeClass('xanh');
+			$('#icon4').removeClass('tru');
+		});
+		
+		$('#nut4').click(function() {
+			$('#pannel4').toggleClass('active');
+			$('#nut4 h3').toggleClass('xanh');
+			$('#icon4').toggleClass('tru');
+
+			$('#pannel2').removeClass('active');
+			$('#nut2 h3').removeClass('xanh');
+			$('#icon2').removeClass('tru');
+			$('#pannel3').removeClass('active');
+			$('#nut3 h3').removeClass('xanh');
+			$('#icon3').removeClass('tru');
+			$('#pannel1').removeClass('active');
+			$('#nut1 h3').removeClass('xanh');
+			$('#icon1').removeClass('tru');
+		});
+	});
+		
+
+
+	
+	
+	
+
+</script>
+</body>
+</html>
+<!-- <i class="fas fa-minus"></i> -->
